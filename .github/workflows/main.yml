@@ -1,0 +1,26 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+- name: ECR push and ECS deploy
+  # You may pin to the exact commit or the version.
+  # uses: jaroldwong/ecr-push-and-ecs-deploy@ff7159953db0e168909c16597be73ef343511d73
+  uses: jaroldwong/ecr-push-and-ecs-deploy@v1
+  with:
+    # ECR registry URI
+    ecr-registry: 459205668758.dkr.ecr.sa-east-1.amazonaws.com/flask-api
+    # ECR repository name
+    ecr-repository: flask-api
+    # ECR image tag. Defaults to latest
+    image-tag: # default is latest
+    # ECS service name
+    ecs-service: FlaskService
