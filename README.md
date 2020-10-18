@@ -1,4 +1,4 @@
-# Challenge-Cloudsec
+# ChallengeCloudSec
 Mercado Livre - Desafio
 
 Esta API tem como objetivo:

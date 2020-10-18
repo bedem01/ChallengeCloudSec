@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  mercadolivre:
+    build: .
+    container_name: mercadolivre
+    volumes:
+      - .:/app
+    ports:
+      - 5001:5001
