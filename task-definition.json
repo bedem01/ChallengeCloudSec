@@ -29,7 +29,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "459205668758.dkr.ecr.sa-east-1.amazonaws.com/flask-api:11fdf1d28b22c3370445b398c7bc76a641d32966",
+      "image": "459205668758.dkr.ecr.sa-east-1.amazonaws.com/flask-api:1.0",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -46,7 +46,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "flasknew"
+      "name": "NewContainer"
     }
   ],
   "placementConstraints": [],
@@ -55,8 +55,8 @@
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:sa-east-1:459205668758:task-definition/lastestflask:1",
-  "family": "lastestflask",
+  "taskDefinitionArn": "arn:aws:ecs:sa-east-1:459205668758:task-definition/Newtask:1",
+  "family": "Newtask",
   "requiresAttributes": [
     {
       "targetId": null,
