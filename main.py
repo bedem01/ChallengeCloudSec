@@ -7,6 +7,7 @@ from flask_marshmallow import Marshmallow
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 import requests
+from webscrapping import get_ips
 import logging as logger
 
 # Log Config
@@ -64,44 +65,45 @@ class PostsResource(Resource):
         db.session.add(post)
         db.session.commit()
 
-        # 		logger.debug(f'{post_schema.dump(post)}')
+        # logger.debug(f'{post_schema.dump(post)}')
         logger.debug("Post Method")
         return post_schema.dump(post)
+    
+    def put(self):
+            data = request.get_json()
+            post = Post.query.filter()
+
+            if "ip" in data:
+                post.ip = data["ip"]
+
+            db.session.update(post)
+            db.session.commit()
+            logger.debug("Put Method")
+            return post_schema.dump(post)
+
+        def delete(self):
+            data = request.get_json()
+            post = Post(ip=data["ip"])
+            post = Post.query.filter(ip="id")
+
+            if "ip" in data:
+                post.id = data["ip"]
+
+            db.session.delete(post)
+            db.session.commit()
+            logger.debug("Delete Method")
+            return post_schema.dump(post)
 
 
 class PostResource(Resource):
-    def get(self, pk):
-        logger.debug("Get Method", pk)
-        return jsonify(post_schema.dump(Post.query.get_or_404(pk)))
-
-    def put(self, pk):
-        data = request.get_json()
-        post = Post.query.get_or_404(pk)
-
-        if "ip" in data:
-            post.ip = data["ip"]
-
-        db.session.update(post)
-        db.session.commit()
-        logger.debug("Put Method")
-        return post_schema.dump(post)
-
-    def delete(self, pk):
-        data = request.get_json()
-
-        post = Post.query.get_or_404(pk)
-
-        if "ip" in data:
-            post.ip = data["ip"]
-
-        db.session.delete(post)
-        db.session.commit()
-        logger.debug("Delete Method")
-        return "", 204
-
+    def get(self):
+        logger.debug("Get Method Torlist")
+        ips = get_ips()
+        return ips
+        
 
 api.add_resource(PostsResource, "/api")
-api.add_resource(PostResource, "/api/id/<string:id>")
+api.add_resource(PostResource, "/torlist")
 
 if __name__ == "__main__":
     logger.debug("Starting the application")
