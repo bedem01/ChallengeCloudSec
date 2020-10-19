@@ -63,9 +63,9 @@ python main.py
 
 ## Endpoints
 ```sh
-* GET     /api/
-* GET     /api/:id
-* POST    /api/:id
-* PUT     /api/:id
-* DELETE  /api/:id
+* GET     /torlist/
+* GET     /api
+* POST    /api/
+* PUT     /api/:ip
+* DELETE  /api/:ip
 ```

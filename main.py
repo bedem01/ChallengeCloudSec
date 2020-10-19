@@ -64,10 +64,15 @@ class PostsResource(Resource):
         db.session.add(post)
         db.session.commit()
 
-        # 		logger.debug(f'{post_schema.dump(post)}')
+        # logger.debug(f'{post_schema.dump(post)}')
         logger.debug("Post Method")
         return post_schema.dump(post)
+    
+    def put(self):
+            data = request.get_json()
+            post = Post.query.filter()
 
+<<<<<<< HEAD
         def put(self):
             data = request.get_json()
             post = Post.query.filter()
@@ -75,6 +80,11 @@ class PostsResource(Resource):
             if "ip" in data:
                 post.ip = data["ip"]
 
+=======
+            if "ip" in data:
+                post.ip = data["ip"]
+
+>>>>>>> 402ab253fa0a30ae54394137266c4fef3d5be083
             db.session.update(post)
             db.session.commit()
             logger.debug("Put Method")
@@ -93,6 +103,7 @@ class PostsResource(Resource):
             logger.debug("Delete Method")
             return post_schema.dump(post)
 
+<<<<<<< HEAD
 
 class PostResource(Resource):
     def get(self):
@@ -110,7 +121,15 @@ class PostResource(Resource):
         m  # essage = f"Hello{ip}"
         # return {"message": message}
         # print(message)
+=======
+>>>>>>> 402ab253fa0a30ae54394137266c4fef3d5be083
 
+class PostResource(Resource):
+    def get(self):
+        logger.debug("Get Method Torlist")
+        ips = get_ips()
+        return ips
+        
 
 api.add_resource(PostsResource, "/api")
 api.add_resource(PostResource, "/torlist")
