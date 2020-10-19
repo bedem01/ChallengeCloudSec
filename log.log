@@ -1,5 +1,6 @@
-2020-10-18 18:04:41,183:DEBUG:Starting the application
-2020-10-18 18:04:41,190:WARNING: * Debugger is active!
-2020-10-18 18:04:41,712:INFO: * Debugger PIN: 151-864-105
-2020-10-18 18:05:58,703:DEBUG:Get Method
-2020-10-18 18:05:59,086:INFO:127.0.0.1 - - [18/Oct/2020 18:05:59] "GET /api HTTP/1.1" 200 -
+2020-10-19 17:01:26,218:DEBUG:Starting the application
+2020-10-19 17:01:26,226:WARNING: * Debugger is active!
+2020-10-19 17:01:26,237:INFO: * Debugger PIN: 230-739-672
+2020-10-19 17:01:52,909:DEBUG:Starting new HTTPS connection (1): www.dan.me.uk:443
+2020-10-19 17:01:54,015:DEBUG:https://www.dan.me.uk:443 "GET /torlist/ HTTP/1.1" 200 39649
+2020-10-19 17:01:54,446:INFO:172.19.0.1 - - [19/Oct/2020 17:01:54] "GET /torlist HTTP/1.1" 200 -
