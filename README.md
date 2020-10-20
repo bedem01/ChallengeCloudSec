@@ -42,20 +42,20 @@ $ pipenv shell
 
 # Install dependencies
 $ pipenv install -r requirements.txt
-
-## Como fazer as migrações
-```sh
-main.py db init
-main.py db migrate
-main.py db upgrade
 ```
 
-# Create DB
+# Create DB (if it doesn't exist)
 ```sh
 $ python
 from main import db
 db.create_all()
 exit()
+
+## How to migrate (optional)
+```sh
+main.py db init
+main.py db migrate
+main.py db upgrade
 ```
 
 # Run Server (http://localhst:5001)
