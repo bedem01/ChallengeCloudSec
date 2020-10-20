@@ -22,7 +22,8 @@ se encontram na base de dados (IPs carregados utilizando o endpoint 2)
 - flask_script
 - flask_marshmallow
 - marshmallow_sqlalchemy
-- flask-jwt-extended
+- Git Actions
+- Conta da AWS
 
 ## Deploy 
 
@@ -36,6 +37,7 @@ docker-compose up
 
 ``` bash
 # Activate venv
+$ pipenv install flask
 $ pipenv shell
 
 # Install dependencies
@@ -63,6 +65,7 @@ python main.py
 
 ## Endpoints
 ```sh
+* http://flasklb-719186885.sa-east-1.elb.amazonaws.com 
 * GET     /torlist/
 * GET     /api
 * POST    /api/
